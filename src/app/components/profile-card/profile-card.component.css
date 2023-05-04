@@ -1,0 +1,28 @@
+.card {
+  width:350px;
+  height: 60%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+}
+
+img {
+  width:50%;
+}
+
+div {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+h1 {
+  text-align: center;
+  margin-top: 10px;
+}
+
+h4 {
+  color: gray;
+  text-align: center;
+}

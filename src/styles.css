@@ -1,0 +1,87 @@
+* {
+  font-family: Sofia-Sans, serif;
+  font-size: 14px;
+}
+
+*:focus {
+  outline: 0 !important;
+}
+
+@font-face {
+  font-family: 'Sofia-Sans';
+  src: url("assets/fonts/SofiaSansCond-Regular.otf");
+}
+
+*:focus {
+  outline: 0 !important;
+}
+
+body {
+  margin: 0;
+}
+
+.mat-card {
+  background: rgb(255,255,255);
+  background: linear-gradient(180deg, rgba(255,255,255,1) 0%, rgba(204,232,253,1) 100%) !important;
+  border: 2px solid rgba(255, 255, 255, 0.2);
+  box-shadow: 0 20px 40px rgba(37, 69, 131, 0.2) !important;
+}
+
+.main-card {
+  height: 91%;
+  margin: 10px 10px auto;
+  background: ghostwhite !important;
+  box-shadow: 0 1px 40px rgba(37, 69, 131, 0.5) !important;
+}
+
+.card {
+  background: ghostwhite !important;
+  margin-bottom: 20px;
+  box-shadow: 0 1px 40px rgba(37, 69, 131, 0.5) !important;
+}
+
+.mat-form-field-appearance-outline.mat-focused .mat-form-field-outline-thick {
+  color: #1c8aac !important;
+}
+
+.mat-focused .mat-form-field-label {
+  color: #1c8aac !important;
+}
+
+.mat-form-field-outline-start {
+  border-radius: 28px 0 0 28px !important;
+  /*min-width: 28px !important;*/
+}
+
+.mat-form-field-outline-end {
+  border-radius: 0 28px 28px 0 !important;
+}
+
+.mat-form-field-flex > .mat-form-field-infix {
+  padding: .9em !important;
+}
+
+.mat-focused .mat-form-field-label {
+  margin-top: -1px !important;
+  margin-left: 24px !important;
+}
+
+.mat-form-field-label {
+  margin-left: 22px;
+}
+
+mat-form-field {
+  margin: 0 15px 0 15px;
+}
+
+th {
+  text-align: center;
+}
+table {
+  background: transparent !important;
+  display: table;
+  width: 100%;
+}
+
+html, body { height: 100%; }
+body { margin: 0; font-family: Roboto, "Helvetica Neue", sans-serif; }

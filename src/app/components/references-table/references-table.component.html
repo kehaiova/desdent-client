@@ -1,0 +1,31 @@
+<mat-card class="card">
+  <table mat-table>
+    <ng-container matColumnDef="names">
+      <th mat-header-cell *matHeaderCellDef> Пациент </th>
+      <td mat-cell *matCellDef="let element">  </td>
+    </ng-container>
+
+    <ng-container matColumnDef="identifier">
+      <th mat-header-cell *matHeaderCellDef> Идентификатор </th>
+      <td mat-cell *matCellDef="let element">  </td>
+    </ng-container>
+
+    <ng-container matColumnDef="visit-date">
+      <th mat-header-cell *matHeaderCellDef> Дата на посещение </th>
+      <td mat-cell *matCellDef="let element">  </td>
+    </ng-container>
+
+    <ng-container matColumnDef="outpatient-list-no">
+      <th mat-header-cell *matHeaderCellDef> Амбулаторен лист, No. </th>
+      <td mat-cell *matCellDef="let element">  </td>
+    </ng-container>
+
+    <ng-container matColumnDef="attending-dentist">
+      <th mat-header-cell *matHeaderCellDef> Лекуващ лекар </th>
+      <td mat-cell *matCellDef="let element">  </td>
+    </ng-container>
+
+    <tr mat-header-row *matHeaderRowDef="displayedColumns"></tr>
+    <tr mat-row *matRowDef="let row; columns: displayedColumns;"></tr>
+  </table>
+</mat-card>

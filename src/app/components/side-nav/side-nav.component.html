@@ -1,0 +1,78 @@
+<mat-sidenav-container
+  class="mat-sidenav-container"
+  autosize="true">
+  <mat-sidenav mode="side"
+               opened="true">
+    <mat-nav-list>
+      <mat-list-item
+        class="chevron"
+        (click)="isExpanded = !isExpanded">
+        <span mat-list-icon
+              class="material-symbols-outlined chevron-button"
+              [ngClass]="{ rotated: isExpanded }">
+              chevron_right
+        </span>
+      </mat-list-item>
+      <mat-list-item
+        class="img">
+        <img src="assets/img/dentist.png" alt="avatar">
+      </mat-list-item>
+      <mat-accordion>
+        <mat-list-item
+          routerLink="home"
+          routerLinkActive='active-list-item'>
+              <span class="material-symbols-outlined icon-style"
+                    [matTooltip]="!isExpanded ? 'Начало' : ''"
+                    matTooltipPosition="right"
+                    mat-list-icon>home</span>
+          <span *ngIf="isExpanded"
+                class="menu-item">
+            Начало
+          </span>
+        </mat-list-item>
+
+        <mat-list-item
+          routerLink="/outpatient-lists"
+          routerLinkActive='active-list-item'>
+        <span class="material-symbols-outlined icon-style"
+              [matTooltip]="!isExpanded ? 'Амбулаторни листове' : ''"
+              matTooltipPosition="right"
+              mat-list-icon>folder</span>
+          <span *ngIf="isExpanded"
+                class="menu-item">
+                      Амбулаторни листове
+          </span>
+        </mat-list-item>
+        <mat-list-item
+          routerLink="/references"
+          routerLinkActive='active-list-item'>
+        <span class="material-symbols-outlined icon-style"
+              [matTooltip]="!isExpanded ? 'Справки' : ''"
+              matTooltipPosition="right"
+              mat-list-icon>folder_open</span>
+          <span *ngIf="isExpanded"
+                class="menu-item">
+            Справки
+          </span>
+        </mat-list-item>
+        <mat-list-item
+          routerLink="administration"
+          routerLinkActive='active-list-item'>
+          <span class="material-symbols-outlined icon-style"
+                [matTooltip]="!isExpanded ? 'Настройки' : ''"
+                matTooltipPosition="right">
+            manage_accounts
+          </span>
+          <span *ngIf="isExpanded"
+                class="menu-item">
+            Настройки
+          </span>
+        </mat-list-item>
+      </mat-accordion>
+    </mat-nav-list>
+
+  </mat-sidenav>
+  <mat-sidenav-content>
+    <router-outlet></router-outlet>
+  </mat-sidenav-content>
+</mat-sidenav-container>

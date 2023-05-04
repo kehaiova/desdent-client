@@ -1,0 +1,35 @@
+.card {
+  width:550px;
+  height: 90%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+}
+
+.email-field, .address-field {
+  width: 490px;
+}
+
+mat-card-actions {
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+}
+
+button {
+  font-size: 14px;
+  background: linear-gradient(#bee1fd, #bee1fd) padding-box;
+  border-radius: 2em;
+  border: 2px solid transparent;
+  box-sizing: border-box;
+  width: 120px;
+  height: 40px;
+  margin: 10px;
+  gap: 132px;
+}
+
+button:hover {
+  background: linear-gradient(#bee1fd, #bee1fd) padding-box,
+  linear-gradient(to left, #23aefa, #bee1fd) border-box;
+}
