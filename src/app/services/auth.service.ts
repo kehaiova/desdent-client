@@ -3,20 +3,23 @@ import {environment} from "../../environments/environment";
 import {AuthResponseData} from "../auth/store/effects/auth.effects";
 import {HttpClient} from "@angular/common/http";
 import {Router} from "@angular/router";
-import {map} from "rxjs";
+import {map, Observable} from "rxjs";
 import {DentistModel} from "../model/dentist.model";
+import {SnackbarService} from "./snackbar.service";
 
 @Injectable({providedIn: 'root'})
 export class AuthService {
 
   constructor(private http: HttpClient,
+              private snackbarService: SnackbarService,
               private router: Router) {
   }
 
   _login(username: string, password: string) {
     return this.http.post<AuthResponseData>(environment.baseUrl + "users/login", {
       username: username,
-      password: password});
+      password: password
+    });
   }
 
   _logout() {
@@ -31,11 +34,17 @@ export class AuthService {
   }
 
   _forgottenPassword(email: string) {
-    return this.http.put<string>(environment.baseUrl + "users/forgotten-pass", {email}).subscribe();
+    return this.http.put<string>(environment.baseUrl + "users/forgotten-pass", {email}).subscribe(res => {
+      this.snackbarService.openSnackbar('Имейлът беше изпратен успешно!', 'success')
+    });
   }
 
-  _edit(data: DentistModel) {
-    return this.http.put<DentistModel>(environment.baseUrl + "", {data}).subscribe();
+  _edit(data: DentistModel, id: number): Observable<DentistModel> {
+    return this.http.put<DentistModel>(environment.baseUrl + "users/" + id, data)
+      .pipe(map(res => {
+        this.snackbarService.openSnackbar('Успешна актуализация на информацията!', 'success');
+        return res;
+      }));
   }
 
 

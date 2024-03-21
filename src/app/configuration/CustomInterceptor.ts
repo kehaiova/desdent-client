@@ -15,6 +15,7 @@ export class CustomInterceptor implements HttpInterceptor{
     return next.handle(request)
       .pipe(
         catchError((error: HttpErrorResponse) => {
+          console.log(error)
           this.snackbarService.openSnackbar(
             error.error.message,
             'error'

@@ -3,13 +3,13 @@
       <mat-form-field appearance="outline">
         <input matInput
                [readonly]="!edit"
-               value="{{det.firstName}}">
+               [(ngModel)]="det.firstName">
         <mat-label>Име</mat-label>
       </mat-form-field>
       <mat-form-field appearance="outline">
         <input matInput
                [readonly]="!edit"
-               value="{{det.lastName}}">
+               [(ngModel)]="det.lastName">
         <mat-label>Фамилия</mat-label>
       </mat-form-field>
     </div>
@@ -17,13 +17,13 @@
       <mat-form-field appearance="outline">
         <input matInput
                [readonly]="!edit"
-               value="{{det.email}}">
+               [(ngModel)]="det.email">
         <mat-label>Имейл адрес</mat-label>
       </mat-form-field>
       <mat-form-field appearance="outline">
         <input matInput
                [readonly]="!edit"
-               value="{{det.username}}">
+               [(ngModel)]="det.username">
         <mat-label>Потр. име</mat-label>
       </mat-form-field>
     </div>
@@ -32,14 +32,15 @@
       <mat-form-field appearance="outline" class="email-field">
         <input matInput
                [readonly]="!edit"
-               value="{{det.phoneNum}}">
+               [(ngModel)]="det.phoneNum">
         <mat-label>Телефонен номер</mat-label>
       </mat-form-field>
     </div>
 
     <div>
       <mat-form-field appearance="outline" class="email-field">
-        <input matInput value="{{det.address}}">
+        <input matInput
+        [(ngModel)]="det.address">
         <mat-label>Адрес по лична карта</mat-label>
       </mat-form-field>
     </div>
@@ -47,7 +48,7 @@
 
   <mat-card-actions>
     <button [hidden]="!edit"
-            (click)="editUserData()">Запази</button>
+            (click)="editUserData(det)">Запази</button>
     <button
       [hidden]="edit"
       (click)="enableEditMode()">Редактирай</button>

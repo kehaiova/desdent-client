@@ -17,3 +17,7 @@ th, td {
   text-overflow: ellipsis;
   white-space: nowrap;
 }
+
+mat-paginator {
+  background: transparent;
+}
