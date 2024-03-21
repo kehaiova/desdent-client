@@ -1,18 +1,18 @@
 <mat-card class="card">
   <mat-form-field appearance="outline">
     <mat-label>Начална дата</mat-label>
-    <input matInput [matDatepicker]="startDate">
+    <input matInput [matDatepicker]="startDate" [(ngModel)]="referencesForm.startDate">
     <mat-datepicker-toggle matSuffix [for]="startDate"></mat-datepicker-toggle>
     <mat-datepicker #startDate></mat-datepicker>
   </mat-form-field>
 
   <mat-form-field appearance="outline">
     <mat-label>Крайна дата</mat-label>
-    <input matInput [matDatepicker]="endDate">
+    <input matInput [matDatepicker]="endDate" [(ngModel)]="referencesForm.endDate">
     <mat-datepicker-toggle matSuffix [for]="endDate"></mat-datepicker-toggle>
     <mat-datepicker #endDate></mat-datepicker>
   </mat-form-field>
   <mat-card-actions>
-    <button mat-button>Изпълни</button>
+    <button mat-button (click)="emitPeriod(referencesForm)">Изпълни</button>
   </mat-card-actions>
 </mat-card>

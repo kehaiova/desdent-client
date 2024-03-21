@@ -1,28 +1,24 @@
-<mat-stepper orientation="vertical"
-             linear>
+<mat-stepper #stepper orientation="vertical" linear>
+  <mat-step>
+    <ng-template matStepLabel>Търсене на пациент</ng-template>
+    <app-search-form-patients (searchPersonIdentifier)="searchByPersonIdentifier($event)"></app-search-form-patients>
+  </mat-step>
   <mat-step>
     <ng-template matStepLabel>Лични данни</ng-template>
+    <app-outpation-list-personal-data [person$]="person$"></app-outpation-list-personal-data>
     <div>
       <button mat-button matStepperNext>Напред</button>
     </div>
   </mat-step>
   <mat-step>
     <ng-template matStepLabel>Данни за амбулаторния лист</ng-template>
-    <div>
-      <button mat-button matStepperNext>Напред</button>
-    </div>
+    <app-outpation-list-details (details)="receiveSheetDetailsFromStep3($event)"></app-outpation-list-details>
   </mat-step>
   <mat-step>
-    <ng-template matStepLabel>Проверка</ng-template>
+    <ng-template matStepLabel>Орален статус на пациента</ng-template>
+    <app-patient-status (details)="receiveSheetDetailsFromStep4($event)"></app-patient-status>
     <div>
-      <button mat-button matStepperNext>Напред</button>
-    </div>
-  </mat-step>
-  <mat-step>
-    <ng-template matStepLabel>Изпращане</ng-template>
-    <div>
-      <button mat-button matStepperNext>Напред</button>
-      <button mat-button matStepperNext>Изпращане</button>
+      <button mat-button matStepperNext (click)="saveAndAdvance()">Запази</button>
     </div>
   </mat-step>
 </mat-stepper>

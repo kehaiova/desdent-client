@@ -112,4 +112,14 @@ img {
   width: 40px;
 }
 
+p {
+  margin-left: 10px !important;
+}
+
+.user {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: row;
+}
 

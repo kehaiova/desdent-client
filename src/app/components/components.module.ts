@@ -1,5 +1,5 @@
 import {NgModule} from '@angular/core';
-import {CommonModule} from '@angular/common';
+import {CommonModule, NgOptimizedImage} from '@angular/common';
 import {AuthFormComponent} from './auth-form/auth-form.component';
 import {MaterialModule} from "../material.module";
 import {SideNavComponent} from './side-nav/side-nav.component';
@@ -12,6 +12,11 @@ import {BrowserAnimationsModule} from "@angular/platform-browser/animations";
 import { ProfileCardComponent } from './profile-card/profile-card.component';
 import { EditProfileComponent } from './edit-profile/edit-profile.component';
 import { PatientTableComponent } from './patient-table/patient-table.component';
+import {FormsModule} from "@angular/forms";
+import { OutpationListPersonalDataComponent } from './outpation-list-personal-data/outpation-list-personal-data.component';
+import { OutpationListDetailsComponent } from './outpation-list-details/outpation-list-details.component';
+import { PatientStatusComponent } from './patient-status/patient-status.component';
+import { SearchFormPatientsComponent } from './search-form-patients/search-form-patients.component';
 
 
 @NgModule({
@@ -24,16 +29,22 @@ import { PatientTableComponent } from './patient-table/patient-table.component';
     OutpatientListStepperComponent,
     ProfileCardComponent,
     EditProfileComponent,
-    PatientTableComponent
+    PatientTableComponent,
+    OutpationListPersonalDataComponent,
+    OutpationListDetailsComponent,
+    PatientStatusComponent,
+    SearchFormPatientsComponent
   ],
-  imports: [
-    CommonModule,
-    MaterialModule,
-    RouterOutlet,
-    RouterLink,
-    RouterLinkActive,
-    BrowserAnimationsModule
-  ],
+    imports: [
+        CommonModule,
+        MaterialModule,
+        RouterOutlet,
+        RouterLink,
+        RouterLinkActive,
+        BrowserAnimationsModule,
+        FormsModule,
+        NgOptimizedImage
+    ],
   exports: [
     AuthFormComponent,
     SideNavComponent,

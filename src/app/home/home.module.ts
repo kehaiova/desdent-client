@@ -1,5 +1,5 @@
 import { NgModule } from '@angular/core';
-import { CommonModule } from '@angular/common';
+import {CommonModule, DatePipe} from '@angular/common';
 import { HomePageComponent } from './home-page/home-page.component';
 import {RouterOutlet} from "@angular/router";
 import { HomeComponent } from './home.component';
@@ -17,7 +17,7 @@ import {MaterialModule} from "../material.module";
     CommonModule,
     RouterOutlet,
     ComponentsModule,
-    MaterialModule
+    MaterialModule,
   ]
 })
 export class HomeModule { }

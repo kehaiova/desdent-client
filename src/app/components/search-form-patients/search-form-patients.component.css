@@ -1,0 +1,19 @@
+mat-card {
+  margin: 20px;
+}
+
+button {
+  font-size: 14px;
+  background: linear-gradient(#bee1fd, #bee1fd) padding-box;
+  border-radius: 2em;
+  border: 2px solid transparent;
+  box-sizing: border-box;
+  width: 120px;
+  height: 40px;
+  gap: 132px;
+}
+
+button:hover {
+  background: linear-gradient(#bee1fd, #bee1fd) padding-box,
+  linear-gradient(to left, #23aefa, #bee1fd) border-box;
+}

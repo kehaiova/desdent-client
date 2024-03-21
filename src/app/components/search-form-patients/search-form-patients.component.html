@@ -1,0 +1,9 @@
+<mat-card-subtitle>
+  Въведете идентификатор на лице и преминете напред.
+</mat-card-subtitle>
+<mat-form-field appearance="outline">
+  <input matInput placeholder="Идентификатор" [(ngModel)]="personIdentifier">
+</mat-form-field>
+<mat-card-footer>
+  <button mat-button (click)="emitPersonIdentifier(personIdentifier)">Напред</button>
+</mat-card-footer>

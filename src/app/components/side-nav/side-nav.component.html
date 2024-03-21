@@ -14,8 +14,13 @@
         </span>
       </mat-list-item>
       <mat-list-item
-        class="img">
-        <img src="assets/img/dentist.png" alt="avatar">
+        class="img" *ngIf="userData$ | async as det">
+        <div class="user">
+          <img src="assets/img/dentist.png" alt="avatar">
+          <p *ngIf="isExpanded">
+            {{det.firstName}} {{det.lastName}}
+          </p>
+        </div>
       </mat-list-item>
       <mat-accordion>
         <mat-list-item
@@ -68,9 +73,20 @@
             Настройки
           </span>
         </mat-list-item>
+        <mat-list-item
+          (click)="logout()">
+          <span class="material-symbols-outlined icon-style"
+                [matTooltip]="!isExpanded ? 'Изход' : ''"
+                matTooltipPosition="right">
+                logout
+          </span>
+          <span *ngIf="isExpanded"
+                class="menu-item">
+            Изход
+          </span>
+        </mat-list-item>
       </mat-accordion>
     </mat-nav-list>
-
   </mat-sidenav>
   <mat-sidenav-content>
     <router-outlet></router-outlet>

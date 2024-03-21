@@ -50,7 +50,7 @@ body {
 
 .mat-form-field-outline-start {
   border-radius: 28px 0 0 28px !important;
-  /*min-width: 28px !important;*/
+  min-width: 28px !important;
 }
 
 .mat-form-field-outline-end {
@@ -83,5 +83,27 @@ table {
   width: 100%;
 }
 
+.snackbar-error {
+  background: #b00020;
+  color: white !important;
+}
+
+.snackbar-success {
+  background: #088030;
+  color: white !important;
+}
+
+.mat-snack-bar-container {
+  text-align: center !important;
+}
+
+.mat-simple-snackbar {
+  display: inline-block !important;
+}
+
 html, body { height: 100%; }
 body { margin: 0; font-family: Roboto, "Helvetica Neue", sans-serif; }
+
+.mat-typography p {
+  margin: 0 !important;
+}

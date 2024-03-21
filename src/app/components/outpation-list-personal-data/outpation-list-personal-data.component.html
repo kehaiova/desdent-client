@@ -1,0 +1,19 @@
+<mat-card-subtitle>
+  Пациент
+</mat-card-subtitle>
+<mat-card-content *ngIf="person$ | async as det">
+  <mat-form-field appearance="outline">
+    <mat-label>ЕГН/ЛНЧ на пациента</mat-label>
+    <input matInput [(ngModel)]="det.patientIdentifier">
+  </mat-form-field>
+  <mat-form-field appearance="outline">
+    <mat-label>Име, презиме и фамилия</mat-label>
+    <input matInput [(ngModel)]="det.patientName">
+  </mat-form-field>
+  <mat-form-field appearance="outline">
+    <mat-label>Адрес</mat-label>
+    <input matInput [(ngModel)]="det.address">
+  </mat-form-field>
+</mat-card-content>
+
+

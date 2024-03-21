@@ -1,7 +1,7 @@
-<mat-card class="card">
+<mat-card class="card" *ngIf="userData$ | async; let det">
   <div>
     <img src="assets/img/dentist.png" alt="dentist">
   </div>
-  <h1 class="dentist-name">Десислава Илиева</h1>
-  <h4 class="role">Стажант</h4>
+  <h1 class="dentist-name">{{det.firstName}} {{det.lastName}}</h1>
+  <h4 class="role">{{det.roleName}}</h4>
 </mat-card>

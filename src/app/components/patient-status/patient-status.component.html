@@ -1,0 +1,22 @@
+<mat-form-field appearance="outline">
+  <input matInput [(ngModel)]="sheetsModel.diagnosis" placeholder="Диагноза">
+</mat-form-field>
+
+<mat-form-field appearance="outline">
+  <input matInput [(ngModel)]="sheetsModel.toothCode" placeholder="Код зъб">
+</mat-form-field>
+
+<mat-form-field appearance="outline">
+  <input matInput [(ngModel)]="sheetsModel.activity" placeholder="Дейност">
+</mat-form-field>
+
+<mat-form-field appearance="outline">
+  <input matInput [(ngModel)]="sheetsModel.activityCode" placeholder="Код дейност">
+</mat-form-field>
+
+<mat-form-field appearance="outline">
+  <input matInput [(ngModel)]="sheetsModel.minutes" placeholder="Брой минути">
+</mat-form-field>
+<mat-card-footer>
+  <button mat-button (click)="emitSheetDetails(sheetsModel)">Напред</button>
+</mat-card-footer>

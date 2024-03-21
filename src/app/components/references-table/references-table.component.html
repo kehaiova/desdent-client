@@ -1,28 +1,38 @@
-<mat-card class="card">
-  <table mat-table>
+<mat-card class="card" *ngIf="references$ | async">
+  <table mat-table [dataSource]="dataSource">
     <ng-container matColumnDef="names">
       <th mat-header-cell *matHeaderCellDef> Пациент </th>
-      <td mat-cell *matCellDef="let element">  </td>
+      <td mat-cell *matCellDef="let element">{{element.personNames}}</td>
     </ng-container>
 
     <ng-container matColumnDef="identifier">
       <th mat-header-cell *matHeaderCellDef> Идентификатор </th>
-      <td mat-cell *matCellDef="let element">  </td>
+      <td mat-cell *matCellDef="let element"> {{element.personIdentificator}} </td>
     </ng-container>
 
     <ng-container matColumnDef="visit-date">
       <th mat-header-cell *matHeaderCellDef> Дата на посещение </th>
-      <td mat-cell *matCellDef="let element">  </td>
+      <td mat-cell *matCellDef="let element"> {{element.visitDate | date: "shortDate"}} </td>
     </ng-container>
 
     <ng-container matColumnDef="outpatient-list-no">
       <th mat-header-cell *matHeaderCellDef> Амбулаторен лист, No. </th>
-      <td mat-cell *matCellDef="let element">  </td>
+      <td mat-cell *matCellDef="let element"> {{element.ambSheetNo}} </td>
+    </ng-container>
+
+    <ng-container matColumnDef="time">
+      <th mat-header-cell *matHeaderCellDef> Време </th>
+      <td mat-cell *matCellDef="let element"> {{element.minutes}} </td>
+    </ng-container>
+
+    <ng-container matColumnDef="tooth-code">
+      <th mat-header-cell *matHeaderCellDef> Код на зъб </th>
+      <td mat-cell *matCellDef="let element"> {{element.toothCode}} </td>
     </ng-container>
 
     <ng-container matColumnDef="attending-dentist">
       <th mat-header-cell *matHeaderCellDef> Лекуващ лекар </th>
-      <td mat-cell *matCellDef="let element">  </td>
+      <td mat-cell *matCellDef="let element">{{element.firstName + " " + element.lastName}}</td>
     </ng-container>
 
     <tr mat-header-row *matHeaderRowDef="displayedColumns"></tr>
